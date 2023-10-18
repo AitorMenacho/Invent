@@ -52,7 +52,7 @@ Luego, inicia el proyecto:
 **Server:** Node, Express
 
 
-## Authors
+## Autor
 
 - [@AitorMenacho](https://github.com/AitorMenacho)
 
