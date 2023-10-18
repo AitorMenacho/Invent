@@ -1,0 +1,27 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content #sidenav class="sidenav-greetings">
+    <div>
+      {{ greetings }}
+    </div>
+    <div>
+      {{ user }}
+    </div>
+  </mat-sidenav-content>
+  <mat-sidenav-content #sidenav class="sidenav-buttons">
+    <li
+      class="button"
+      *ngFor="let option of options"
+      [routerLink]="[option.route]"
+    >
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        [fontIcon]="option.icon"
+      ></mat-icon>
+      {{ option.name }}
+    </li>
+  </mat-sidenav-content>
+  <mat-sidenav-content #sidenav class="sidenav-logout">
+    <li class="button" (click)="logout()">Cerrar sesión</li>
+  </mat-sidenav-content>
+</mat-sidenav-container>

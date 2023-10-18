@@ -1,0 +1,39 @@
+<div class="modal">
+  <div class="modal-header">
+    <h3 class="modal-title">{{ title }}</h3>
+  </div>
+  <div class="modal-body">
+    <mat-form-field *ngFor="let input of inputs">
+      <mat-label>{{ input.label }}</mat-label>
+      <input
+        matInput
+        type="{{ input.type }}"
+        class="form-control"
+        [placeholder]="input.placeholder"
+        [(ngModel)]="input.value"
+        (input)="handleInputChange()"
+        required
+      />
+    </mat-form-field>
+  </div>
+  <div class="modal-footer">
+    <div class="solution">
+      <div class="company">
+        <mat-label class="title">Empresa reparto:</mat-label>
+        {{ company }}
+      </div>
+      <div class="price">
+        <mat-label class="title">Precio:</mat-label>
+        {{ price }} €
+      </div>
+    </div>
+    <div class="buttons">
+      <button mat-raised-button class="btn" (click)="exit()">
+        Cerrar
+      </button>
+      <button mat-raised-button class="btn" (click)="close()">
+        Guardar
+      </button>
+    </div>
+  </div>
+</div>

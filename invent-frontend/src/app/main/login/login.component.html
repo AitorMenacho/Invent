@@ -1,0 +1,45 @@
+<h1 class="title">INVENT</h1>
+<div class="body">
+  <mat-card class="card">
+    <mat-card-header class="card-title">
+      <mat-card-title>
+        <h1>¡Hola de nuevo!</h1>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <h2>Ingresa tus datos para iniciar sesión</h2>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <form (submit)="login($event)" ngNoForm>
+      <mat-card-content class="form-inputs">
+        <mat-form-field>
+          <mat-label>Introduce tu email</mat-label>
+          <input matInput placeholder="batman@gmail.com" [(ngModel)]="email" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input
+            matInput
+            [(ngModel)]="password"
+            [type]="hide ? 'password' : 'text'"
+          />
+          <div
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+            class="eye"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </div>
+        </mat-form-field>
+        <mat-error *ngIf="textError.length > 0">{{ textError }}</mat-error>
+      </mat-card-content>
+      <mat-card-actions class="buttons">
+        <button mat-raised-button class="button" (click)="login($event)">
+          Iniciar sesión
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

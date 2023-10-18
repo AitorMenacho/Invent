@@ -1,0 +1,21 @@
+<div class="content">
+  <table mat-table [dataSource]="dataSource" class="table">
+    <ng-container matColumnDef="Tipo de paquete">
+      <th mat-header-cell *matHeaderCellDef>Tipo de paquete</th>
+      <td mat-cell *matCellDef="let package">{{ package.tipo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Intervalo de Kg">
+      <th mat-header-cell *matHeaderCellDef>Intervalo de Kg</th>
+      <td mat-cell *matCellDef="let package">{{ package.kg }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Fórmula cálculo precio">
+      <th mat-header-cell *matHeaderCellDef>Fórmula cálculo precio</th>
+      <td mat-cell *matCellDef="let package">{{ package.formula }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
