@@ -1,0 +1,17 @@
+{
+  "name": "invent-backend",
+  "version": "1.0.0",
+  "description": "backend of the invent app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Aitor Menacho",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.6.2"
+  }
+}
